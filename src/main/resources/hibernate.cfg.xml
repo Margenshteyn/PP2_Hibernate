@@ -8,7 +8,7 @@
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="connection.url">jdbc:mysql://localhost:3306/pre_project2?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true</property>
     <property name="connection.username">root</property>
-    <property name="connection.password">7CthdthVfhutyintqyf6</property>
+    <property name="connection.password">password</property>
 
     <!-- JDBC connection pool settings ... using built-in test pool -->
     <property name="connection.pool_size">10</property>
