@@ -2,8 +2,6 @@ package app.servlets;
 
 import app.entities.User;
 import app.service.UserService;
-import app.service.UserServiceImpl;
-import app.utils.ConnectionProvider;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +13,7 @@ import java.io.IOException;
 @WebServlet("/userAdd")
 public class UserAddServlet extends HttpServlet {
 
-    private UserService userService = UserServiceImpl.getUserService();
+    private UserService userService = UserService.getUserService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {

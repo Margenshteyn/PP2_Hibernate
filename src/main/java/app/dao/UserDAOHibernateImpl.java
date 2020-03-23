@@ -1,6 +1,7 @@
 package app.dao;
 
 import app.entities.User;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -36,7 +37,7 @@ public class UserDAOHibernateImpl implements UserDAO {
             transaction = session.beginTransaction();
             session.save(user);
             transaction.commit();
-        } catch (RuntimeException e) {
+        } catch (HibernateException e) {
             try {
                 transaction.rollback();
                 printTransactionError();
@@ -61,7 +62,7 @@ public class UserDAOHibernateImpl implements UserDAO {
             transaction = session.beginTransaction();
             session.update(user);
             transaction.commit();
-        } catch (RuntimeException e) {
+        } catch (HibernateException e) {
             try {
                 transaction.rollback();
                 printTransactionError();
@@ -79,7 +80,7 @@ public class UserDAOHibernateImpl implements UserDAO {
             User user = getUserByLogin(login);
             session.delete(user);
             transaction.commit();
-        } catch (RuntimeException e) {
+        } catch (HibernateException e) {
             try {
                 transaction.rollback();
                 printTransactionError();
